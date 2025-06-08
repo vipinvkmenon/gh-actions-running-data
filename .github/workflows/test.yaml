@@ -27,5 +27,16 @@ jobs:
           echo "-----"
           echo "${{ vars }}" 
           echo "-----"
+      - name: Print all environment variables
+        run: printenv
+
+      - name: Print GitHub Contexts (env, vars, github)
+        run: |
+          echo "=== ENV CONTEXT ==="
+          echo "${{ toJson(env) }}"
+          echo "=== VARS CONTEXT ==="
+          echo "${{ toJson(vars) }}"
+          echo "=== GITHUB CONTEXT ==="
+          echo "${{ toJson(github) }}"
           
           
