@@ -21,11 +21,11 @@ jobs:
         name: checkout
       - name: Print github stuff
         run: |
-          echo ${{ github }} | jq
+          echo "${{ github }}" 
           echo "-----"
-          echo ${{ env }} | jq
+          echo "${{ env }}"
           echo "-----"
-          echo ${{ vars }} | jq
+          echo "${{ vars }}" 
           echo "-----"
           
           
