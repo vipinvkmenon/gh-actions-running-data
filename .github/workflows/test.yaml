@@ -38,5 +38,15 @@ jobs:
           echo "${{ toJson(vars) }}"
           echo "=== GITHUB CONTEXT ==="
           echo "${{ toJson(github) }}"
+  next_job:
+      runs-on: ubuntu-latest
+      steps:
+      - name: Print things
+        if: always()
+        run: |
+          curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+          "https://api.github.com/repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/jobs" \
+          | jq 
+
           
           
