@@ -1,4 +1,4 @@
-Print Github Stuff
+# Print Github Stuff
 name: Test
 
 # This GitHub action runs your tests for each pull request and push.
